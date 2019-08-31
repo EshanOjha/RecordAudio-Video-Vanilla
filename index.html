@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="WebRTC code samples">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <meta itemprop="description" content="Client-side WebRTC code samples">
+    <meta itemprop="name" content="WebRTC code samples">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta id="theme-color" name="theme-color" content="#ffffff">
+    <base target="_blank">
+    <title>Record Audio/Video</title>
+    <style>
+        #videoPlayer{
+            width: 300px;
+            height: 300px;
+        }
+        #recorded {
+            width: 300px;
+            height: 300px;
+        }
+        #playVideo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background-color: green;
+        }
+        #deleteVideo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:#fff;
+            background-color: red;
+        }
+        #videoBox{
+            display: none;
+            align-items: center;
+            justify-content: space-around;
+            margin: 16px;
+        }
+        .recordedVideoBox{
+           display: flex;
+           align-items: center;
+           justify-content: space-around;
+           margin-top: 24px;
+        }
+        #myCanvas{
+            display: none;
+        }
+        #imageVideo{
+            display: none;
+        }
+        #audioFile{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <button id="start">Start camera</button>
+    <video id="videoPlayer" playsinline autoplay muted></video>
+    
+    <h1> <span>Video Recorder</span> </h1>
+    <div id="videoBox">
+        <video id="recorded"></video>
+    </div>
+    <button id="record" disabled>Start Recording</button>
+    
+    <div id="recordedVideoList"> </div>
+    <div> <span id="errorMsg"></span> </div>
+    
+    <h1> <span>Capture Image</span> </h1>
+    <div>
+        <button id="takePicture">Take Picture</button>
+        <video  id="imageVideo" playsinline autoplay></video>
+        <canvas  id='myCanvas'></canvas>
+    </div>
+     <h1 > <span>Record Audio</span> </h1>
+        <div id="controls">
+         <button id="recordAudioButton">Record</button>
+         <button id="stopButton" disabled>Stop</button>
+        </div>
+        <h3>All Recordings</h3>
+        <ol id="recordingsList"></ol>
+</div>
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
